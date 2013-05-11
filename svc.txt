@@ -1,0 +1,12 @@
+svc demo TODO list
+
+1. Base windows service used with a executable file.
+
+
+
+2. Svchost load dll windows service.
+
+
+
+
+3. Service with socket use ssh which can send spicific data.
