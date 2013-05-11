@@ -1,0 +1,29 @@
+这个demo向您展示了如何写一个svchost启动的windows 服务，在OS启动时
+它会一起启动，svchost会检查注册表中的分组，此服务使用了netsvcs组，
+并使用LocalSystem用用户来启动这个服务(为了安全期间，这也是MS推荐的做法)。
+Our DLL exports three functions:
+ServiceMain()
+InstallService() and RemoveService(). The final two are instal and remove
+the service by RunDll32 using command line.
+Note that the command prompt it launched in administrator mode.You can 
+put the isvc.dll file in the System32 folder and then to install the 
+service, type the following line:
+rundll32 isvc.dll InstallService
+
+To remove the service you type:
+rundll32 isvc.dll RemoveSerivce
+
+If you choose a location other than System32 it will type the full path of the dll.
+The installation or removal of our service n? BLINDNESS a red? Windows startup. 
+All of? Details of the installation and configuration of our service are included 
+in the code InstallService () function. 
+Our service uses a timer to write, every minute, in a log file 
+c:\windows\isvc.log, date and time to trigger the timer?. This is just to show 
+the functioning of the service. For all d? Details, look at the source code. 
+code is r? alis? in C with Visual C / C + + 2010, but it is easily adaptable to 
+other tools. 
+To pr? server the clarity? code, error handling is minimal. 
+Has the department t? test? no problem? me under Windows XP, Vista and 7. 
+RacppService.dll The dll is provided in the zip if you liked to test. 
+Voil?, I esp? re having nothing forgotten?. 
+Any comments or remarks are welcome

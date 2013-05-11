@@ -1,0 +1,6 @@
+LIBRARY      "isvc"
+	
+	EXPORTS
+		ServiceMain @1
+		InstallService @2
+		RemoveService @3
